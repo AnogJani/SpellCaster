@@ -238,7 +238,7 @@ function mode_color_coder (mode) {
     if (mode == "warning" || mode == "yellow")                                  {return ["#FFF89A","fa-triangle-exclamation"];}
     if (mode == "good" || mode == "green")                                      {return ["#A7EB91","fa-thumbs-up"];}
     if (mode == "info" || mode == "blue")                                       {return ["#82D3FF","fa-circle-info"];}
-    if (mode == "copy")                                                         {return ["#C6D57E","fa-copy"];}
+    if (mode == "copy")                                                         {return ["#8DE795","fa-copy"];}
     return ["#D1D1D1","fa-code"]; //base case
 }
 
