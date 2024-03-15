@@ -30,7 +30,7 @@ function create_nav_bar () {
         <li class="nav_bar_link_text"><a class="nav_bar_link `+ home_page_identifier +`" href="${site_url}/SpellCaster/index.html"><i class="fas fa-home nav_bar_icon"></i>דף הבית</a></li>
         <li class="nav_bar_link_text"><a class="nav_bar_link new `+ image_caster_page_identifier +`" href="${site_url}/SpellCaster/image_caster.html"><i class="fas fa-image nav_bar_icon"></i>מחולל התמונות</a></li>
         <li class="nav_bar_link_text"><a class="nav_bar_link tooltip `+ spell_book_page_identifier +`" href="${site_url}/SpellCaster/spell_book.html"><i class="fas fa-book-open nav_bar_icon" style="margin:5px"></i>ספר הכשפים<span class="tooltiptext bottom">הסבר לשימוש במחולל הכישופים</span></a></li>
-        <li class="nav_bar_link_text"><a class="nav_bar_link" target="_blank" href="http://kc.sites.airnet/%D7%A7%D7%94%D7%99%D7%9C%D7%95%D7%AA%20%D7%99%D7%93%D7%A2/%D7%A7%D7%94%D7%99%D7%9C%D7%AA%20%D7%99%D7%93%D7%A2%20-%20%D7%9E%D7%A0%D7%94%D7%9C%D7%99%20%D7%99%D7%93%D7%A2%20%D7%A2%D7%A5%20%D7%94%D7%93%D7%A2%D7%AA"><i class="fas fa-tree nav_bar_icon" style="margin:5px"></i>קהילת ידע עץ הדעת</a></li>
+        <li class="nav_bar_link_text"><a class="nav_bar_link" target="_blank" href="#"><i class="fas fa-tree nav_bar_icon" style="margin:5px"></i>קהילת ידע עץ הדעת</a></li>
     </ul>
     <div class="the_rest_of_the_nav">
     <button class="large_button_nav_bar premade_code" type="button" onclick="window.open('${site_url}/SpellCaster/premade_code.html','_self');"><i class="fas fa-code nav_bar_icon"></i>טעינת כישוף מקוד קיים</button>
