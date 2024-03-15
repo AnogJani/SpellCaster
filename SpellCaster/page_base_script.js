@@ -236,7 +236,7 @@ function log_url() {
 function mode_color_coder (mode) {
     if (mode == "danger" || mode == "red" || mode == "Hapoel")                  {return ["#FF7878","fa-circle-xmark"];}
     if (mode == "warning" || mode == "yellow")                                  {return ["#FFF89A","fa-triangle-exclamation"];}
-    if (mode == "good" || mode == "green")                                      {return ["#9BEA80","fa-thumbs-up"];}
+    if (mode == "good" || mode == "green")                                      {return ["#A7EB91","fa-thumbs-up"];}
     if (mode == "info" || mode == "blue")                                       {return ["#82D3FF","fa-circle-info"];}
     if (mode == "copy")                                                         {return ["#C6D57E","fa-copy"];}
     return ["#D1D1D1","fa-code"]; //base case
