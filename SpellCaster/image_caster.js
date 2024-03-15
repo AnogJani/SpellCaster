@@ -220,7 +220,7 @@ async function load_icon_links_from_API () {
 }
 
 function load_icon_links_from_directory () {
-    icon_library = ['../icon_lib/address-book.svg',
+    icon_links = ['../icon_lib/address-book.svg',
     '../icon_lib/address-card.svg',
     '../icon_lib/bell.svg',
     '../icon_lib/bell-slash.svg',
