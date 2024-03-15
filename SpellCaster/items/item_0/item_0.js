@@ -160,8 +160,8 @@ function edit_dialog() {
             <button type="button" class="dialog_exit_button" onclick="exit_general_dialog();GiveUserOutput();"><i class="fas fa-times"></i></button>
         </div>
         <div class="edit_images_buttons">
-            <img onclick="exit_general_dialog();edit_nodes(getImages(),1);" title="ערוך תמונות" class="image_btn" src="../../PublishingImages/upper_images.png">
-            <img onclick="exit_general_dialog();edit_nodes(getLinks(),1);" title="ערוך לינקים תחתונים" class="image_btn" src="../../PublishingImages/bottomer_links.png">
+            <img onclick="exit_general_dialog();edit_nodes(getImages(),1);" title="ערוך תמונות" class="image_btn" src="../../../PublishingImages/upper_images.png">
+            <img onclick="exit_general_dialog();edit_nodes(getLinks(),1);" title="ערוך לינקים תחתונים" class="image_btn" src="../../../PublishingImages/bottomer_links.png">
         </div>
         <!--<div class="flex">
         <button class="nami_button edit_button" type="button" onclick="exit_general_dialog();edit_nodes(getImages(),1);"><i class="fas fa-pen-to-square"></i> ערוך תמונות </button>
