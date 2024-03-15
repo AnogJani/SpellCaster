@@ -21,7 +21,7 @@ const all_items_list =
         "link" : "items/item_1/item_1.html",
         "image_url" : "../PublishingImages/item_1.png",
         "location" : "full",
-        "additional_classes" : ["new_capabilities_item"],
+        "additional_classes" : [],
         "upload_date" : "26/06/2022",
         "creator" : "Anog Jani"
     }
