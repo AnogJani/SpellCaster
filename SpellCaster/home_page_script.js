@@ -21,13 +21,13 @@ function handle_location_indicator () {
 // return format: [image, color]
 */
 function location_color_coder (current_item) {
-    if (current_item == null)                               {return ["../PublishingImages/none.PNG"   ,"grey"];}  //default case
-    if (current_item.classList.contains("bottom-element"))  {return ["../PublishingImages/bottom.PNG" ,"red"];}
-    if (current_item.classList.contains("top-element"))     {return ["../PublishingImages/top.PNG"    ,"yellow"];}
-    if (current_item.classList.contains("right-element"))   {return ["../PublishingImages/right.PNG"  ,"blue"];}
-    if (current_item.classList.contains("left-element"))    {return ["../PublishingImages/left.PNG"   ,"light-green"];}
-    if (current_item.classList.contains("full-element"))    {return ["../PublishingImages/full.PNG"   ,"pink"];}
-    if (current_item.classList.contains("main-element"))    {return ["../PublishingImages/main.PNG"   ,"orange"];}
+    if (current_item == null)                               {return ["../PublishingImages/none.png"   ,"grey"];}  //default case
+    if (current_item.classList.contains("bottom-element"))  {return ["../PublishingImages/bottom.png" ,"red"];}
+    if (current_item.classList.contains("top-element"))     {return ["../PublishingImages/top.png"    ,"yellow"];}
+    if (current_item.classList.contains("right-element"))   {return ["../PublishingImages/right.png"  ,"blue"];}
+    if (current_item.classList.contains("left-element"))    {return ["../PublishingImages/left.png"   ,"light-green"];}
+    if (current_item.classList.contains("full-element"))    {return ["../PublishingImages/full.png"   ,"pink"];}
+    if (current_item.classList.contains("main-element"))    {return ["../PublishingImages/main.png"   ,"orange"];}
 }
 
 //calling the functions in this script:

@@ -10,7 +10,7 @@ const all_items_list =
     {
         "title" : "ניווט תחתון עם תמונות",
         "link" : "items/item_0/item_0.html",
-        "image_url" : "../PublishingImages/item_0.PNG",
+        "image_url" : "../PublishingImages/item_0.png",
         "location" : "bottom",
         "additional_classes" : [],
         "upload_date" : "16/06/2022",
@@ -19,7 +19,7 @@ const all_items_list =
     ,{
         "title" : "תמונת רקע ועיצוב כללי לאתר",
         "link" : "items/item_1/item_1.html",
-        "image_url" : "../PublishingImages/item_1.PNG",
+        "image_url" : "../PublishingImages/item_1.png",
         "location" : "full",
         "additional_classes" : ["new_capabilities_item"],
         "upload_date" : "26/06/2022",
@@ -28,7 +28,7 @@ const all_items_list =
     ,{
         "title" : "תפריט עליון נפתח",
         "link" : "items/item_2/item_2.html",
-        "image_url" : "../PublishingImages/item_2.PNG",
+        "image_url" : "../PublishingImages/item_2.png",
         "location" : "top",
         "additional_classes" : [],
         "upload_date" : "26/07/2022",
@@ -37,7 +37,7 @@ const all_items_list =
     ,{
         "title" : "כפתור אינטראקטיבי",
         "link" : "items/item_3/item_3.html",
-        "image_url" : "../PublishingImages/item_3.PNG",
+        "image_url" : "../PublishingImages/item_3.png",
         "location" : "main",
         "additional_classes" : [],
         "upload_date" : "08/11/2022",
@@ -46,7 +46,7 @@ const all_items_list =
     ,{
         "title" : "פתיחת דף אוטומטית בכרום",
         "link" : "items/item_4/item_4.html",
-        "image_url" : "../PublishingImages/item_4.PNG",
+        "image_url" : "../PublishingImages/item_4.png",
         "location" : "full",
         "additional_classes" : [],
         "upload_date" : "16/04/2023",
@@ -55,7 +55,7 @@ const all_items_list =
     ,{
         "title" : "מחולל הקישורים 2.0",
         "link" : "items/item_5/item_5.html",
-        "image_url" : "../PublishingImages/item_5.PNG",
+        "image_url" : "../PublishingImages/item_5.png",
         "location" : "main",
         "additional_classes" : [],
         "upload_date" : "31/05/2023",
@@ -64,7 +64,7 @@ const all_items_list =
     ,{
         "title" : "ניווט צד",
         "link" : "items/item_6/item_6.html",
-        "image_url" : "../PublishingImages/item_6.PNG",
+        "image_url" : "../PublishingImages/item_6.png",
         "location" : "right",
         "additional_classes" : [],
         "upload_date" : "22/06/2023",
@@ -73,7 +73,7 @@ const all_items_list =
     ,{
         "title" : "כרטיסיות",
         "link" : "items/item_7/item_7.html",
-        "image_url" : "../PublishingImages/item_7.PNG",
+        "image_url" : "../PublishingImages/item_7.png",
         "location" : "top",
         "additional_classes" : [],
         "upload_date" : "22/06/2023",
@@ -82,7 +82,7 @@ const all_items_list =
     ,{
         "title" : "גלריית תמונות",
         "link" : "items/item_8/item_8.html",
-        "image_url" : "../PublishingImages/item_8.PNG",
+        "image_url" : "../PublishingImages/item_8.png",
         "location" : "main",
         "additional_classes" : [],
         "upload_date" : "24/10/2023",
