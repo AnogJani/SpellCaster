@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="../../../PublishingImages/spell_caster_logo.ico">
+    <link rel="stylesheet" href="../../../SiteAssets/fontawesome-free-6.0.0-beta3-web/css/all.css">
+    <link rel="stylesheet" href="../../styles/page_base.css">
+    <link rel="stylesheet" href="../../styles/styles_item_pages.css">
+    <script src="../../open_in_chrome.js" defer></script>
+    <script src="../../page_base_script.js" defer></script>
+    <script src="../../general_item_script.js" defer></script>
+    <title>מחולל הכישופים</title>
+</head>
+<body>
+    <!--Navigation Bar-->
+    <div class="nav_bar_padder"></div>
+    <nav class="nav_bar" id="nav_bar"></nav>
+    <!--End Of Navigation Bar-->
+    
+    <!--All The Elements-->
+    <div class="element_div">
+    <div class="flex"><h3 class="element_title">הוספת כפתור:</h3></div>
+    <div class="flex w80">
+        <div class="input_div">
+            <lable class="input_lable">קישור</lable>
+            <input type="url" class="text_input input2" id="link_input1" placeholder="הכנס קישור אליו יוביל הכפתור">
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">כיתוב</lable>
+            <input type="text" class="text_input input2" id="name_input1" placeholder="הכנס כיתוב">
+        </div>
+    </div>
+    <div class="flex">
+        <button class="nami_button push_button" type="button" onclick="pushButtonInfo()"><i class="fas fa-plus"></i>החל</button>
+    </div>
+    </div>
+
+    <div class="element_div">
+        <div class="flex"><h3 class="element_title">הגדרות כלליות:</h3></div>
+        <div class="flex w90">
+            <div class="input_div">
+                <lable class="input_lable">צבע ראשי</lable>
+                <input type="color" value="#000000" class="color_input input3" id="color_input3_1" oninput="pushMainSettings();">
+            </div>
+            <div class="input_div">
+                <lable class="input_lable">צבע במעבר עכבר</lable>
+                <input type="color" value="#444444" class="color_input input3" id="color_input3_2" oninput="pushMainSettings();">
+            </div>
+            <div class="input_div">
+                <lable class="input_lable">פונט</lable>
+                <select class="select_input input3 font_select_input" id="select_input3" onchange="pushMainSettings();"></select>
+            </div>
+            <div class="input_div">
+                <lable class="input_lable">גודל טקסט</lable>
+                <input type="number" min="20" max="50" value="30" class="number_input input3" id="number_input3" onchange="pushMainSettings();"></input>
+            </div>
+            <div class="input_div">
+                <lable class="input_lable">פתיחה בחלון חדש</lable>
+                <input type="checkbox" class="checkbox_input input3" id="checkbox1_input3" onchange="pushMainSettings();" checked>
+            </div>
+        </div>
+</div>
+    <!--End Of All The Elements-->
+    
+    <!--Bottom Functionality (Copy Code && Preview...)-->
+    <div class="flex">
+        <button class="nami_button copy_button" onclick="copy_code('final_code_copy');"><i class="fa-solid fa-copy"></i> העתק קוד </button>
+        <textarea class="final_code_copy" id="final_code_copy"></textarea>
+    </div>
+    <div class="flex"><h3 class="element_title">תצוגה מקדימה:</h3></div>
+    <div class="code_preview_window" id="code_preview_window">
+        <div class="code_preview" id="code_preview" style="display:flex;justify-content:center"></div>
+    </div>
+    
+    <script src="item_3.js"></script>
+</body>

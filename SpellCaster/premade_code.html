@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="../PublishingImages/spell_caster_logo.ico">
+    <link rel="stylesheet" href="../SiteAssets/fontawesome-free-6.0.0-beta3-web/css/all.css">
+    <link rel="stylesheet" href="styles/page_base.css">
+    <script src="open_in_chrome.js" defer></script>
+    <script src="page_base_script.js" defer></script>
+    <title>premade_code</title> 
+</head>
+<body>
+    <!--Navigation Bar-->
+    <div class="nav_bar_padder"></div>
+    <nav class="nav_bar premade_code_page" id="nav_bar"></nav>
+    <!--End Of Navigation Bar-->
+
+    <!--Titles-->
+    <center>
+    <h1 class="h1_title">הדביקו את הכישוף שיצרתם והחלו בעריכה!</h1>
+        <button id="additional_text_button_premade_code" class="text_button" onclick="
+        document.getElementById(`additional_text_button_premade_code`).style.display = 'none';
+        document.getElementById(`premade_explain_text`).innerHTML =
+        `
+        <p class='p_title'>בתיבת הטקסט תוכלו להדביק קוד שהכנתם בעבר במחולל הכישופים</p>
+        <p class='p_title'>ולאחר לחיצה על כפתור 'טען כישוף' תוכלו לחזור למצב עריכה של הכישוף.</p>
+        <p class='p_title' style='font-size:1rem;margin-top:20px;'>למידע והסברים נוספים, תוכלו להיכנס <b>ספר הכשפים</b> בניווט העליון של האתר</p>
+        `
+        ;"><i class="fas fa-circle-info"></i>למידע נוסף לחצו כאן</button>
+    <div id="premade_explain_text"></div>
+    </center>
+    
+    <!--Page Content-->
+    <div class="page_content">
+        <div class="premade_code_wrapper">
+            <textarea class="premade_code_textarea" id="premade_code_textarea" placeholder="הדבק קוד מוכן כאן"></textarea>
+            <button class="nami_button load_button" onclick="PremadeCodeHandler();"><i class="fa-solid fa-wand-magic-sparkles"></i>  טען כישוף  </button>
+        </div>
+    </div>
+</body>

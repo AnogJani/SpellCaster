@@ -1,0 +1,609 @@
+html {
+    height: 100vh;
+}
+
+/*canvas*/
+#main {
+    width: 70%;
+    height: 88%;
+    position: absolute;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#canvas_div {
+    height: 700px;
+    width: 700px;
+    position: relative;
+    background-color: #85858534;
+    border: 5px dashed var(--deep-blue);
+}
+
+.canvas {
+    position: absolute;
+}
+
+/*side bar*/
+#side_bar {
+    width: 30%;
+    height: 85%;
+    background-color: #172555;
+    box-shadow: -3px 0px 5px rgba(0, 0, 0, 0.459);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 12.5%;
+    right: 0px;
+}
+
+#side_bar_menus {
+    z-index: 2;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*side bar menu button*/
+.side_bar_menu_button {
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    border: none;
+    position: relative;
+    background-color: #ffffff33;
+    color: white;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    transition: 0.2s;
+}
+
+.side_bar_menu_button:hover {
+    background-color: #ffffff71;
+    transition: 0.2s;
+}
+
+.side_bar_menu_button:active {
+    background-color: #ffffffab;
+    transition: 0.05s;
+}
+
+.side_bar_menu_button:focus, save_button:focus {
+    outline-width: 0px;
+}
+
+.side_bar_menu_button::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: 0%;
+    height: 3px;
+    width: 100%;
+    background-color: var(--light-purple);
+    transform: translateY(3px);
+    transition: 0.3s;
+}
+
+.side_bar_menu_button:hover::before {
+    transform: translateY(0px);
+    transition: 0.3s;
+}
+
+.side_bar_menu_button.active {
+    background-color: #ffffff56;
+}
+.side_bar_menu_button.active::before {
+    transform: translateY(0px);
+}
+
+.side_bar_menu_button i {
+    font-size: 23px;
+}
+
+/*side bar content*/
+#side_bar_content {
+    position: relative;
+    direction: ltr;
+    font-size: 25px;
+    flex-grow: 1;
+    color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.side_bar_content_menu {
+    display: none !important;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.side_bar_content_menu.shown {
+    display: block !important;
+}
+
+.side_bar_content_menu * {
+    direction: rtl;
+}
+
+.side_bar_content_menu h5 {
+    margin: 7px;
+    font-size: 30px;
+    display: flex;
+    white-space: nowrap;
+    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: normal;
+    text-decoration: underline var(--light-purple);
+    background-color: #172555;
+}
+
+.side_bar_content_menu h5 > span {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.side_bar_content_menu h5 div {
+    content: '';
+    margin-top: 7px;
+    height: 2px;
+    width: 100%;
+    background-color: var(--light-purple);
+    opacity: 0.5;
+}
+
+.side_bar_content_menu h6 {
+    margin: 7px;
+    font-size: 25px;
+    display: flex;
+    white-space: nowrap;
+    padding: 5px;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: normal;
+}
+
+.side_bar_content_menu h6 > span {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.side_bar_content_menu h4 {
+    margin: 5px;
+    margin-bottom: 10px;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    color: rgb(182, 182, 182);
+    background-color: #172555;
+}
+
+.side_bar_content_menu h4 div {
+    content: '';
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 7px;
+    height: 1px;
+    width: 30%;
+    background-color: rgba(182, 182, 182, 0.308);
+}
+
+.side_bar_content_menu p {
+    margin: 5px;
+    font-size: 22px;
+}
+
+.side_bar_content_menu .padder {
+    height: 30px;
+}
+
+.side_bar_content_menu input {
+    margin-bottom: 15px;
+}
+
+.side_bar_content_menu input[type="color"] {
+    width: 20%;
+}
+
+.side_bar_content_menu input[type="range"] {
+    position: relative;
+    width: 60%;
+    height: 10px;
+}
+
+.side_bar_content_menu input[type="range"]::before {
+    position: absolute;
+    opacity: 0;
+    content: attr(data-before);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #cfcfcf;
+    border-radius: 5px;
+    width: 46px;
+    height: 24px;
+    top: -10px;
+    right: -55px;
+    transition: 0.3s;
+}
+
+.side_bar_content_menu input[type="range"]:hover::before {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.side_bar_content_menu input[type="range"]:active::before {
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.side_bar_content_menu .background_shape_radio {
+    display: none;
+}
+
+.side_bar_content_menu .image_radio_button, .side_bar_content_menu .shape_button {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: rgb(198, 198, 255);
+    transition: 0.1s ease-in-out;
+}
+
+.side_bar_content_menu .image_radio_button:hover, .side_bar_content_menu .shape_button:hover {
+    background-color: rgb(225, 225, 255);
+}
+
+.side_bar_content_menu .background_shape_radio:checked+label .image_radio_button, .side_bar_content_menu .shape_button:active {
+    background-color: var(--light-purple);
+}
+
+.shape_button_image {
+    width: 60px;
+    height: 60px;
+}
+
+.side_bar_content_menu .image_radio_button div {
+    background-color: transparent;
+    border: 5px solid black;
+    width: 40px;
+    height: 40px;
+}
+
+#image_file_input {
+    cursor: pointer;
+    margin-top: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+}
+
+#image_file_input::-webkit-file-upload-button {
+    cursor: pointer;
+    background-color: var(--light-purple);
+    border-width: 0;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    transition: 0.1s ease-in-out;
+    font-family: inherit;
+}
+
+#image_file_input::-webkit-file-upload-button:focus {
+    outline-width: 0;
+}
+
+#image_file_input::-webkit-file-upload-button:hover {
+    background-color: rgb(225, 225, 255);
+}
+
+.rect_button {
+    border-radius: 2px;
+}
+
+.circle_button {
+    border-radius: 50%;
+}
+
+#background_transparent_input {
+    position: relative;
+    margin: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#background_transparent_input::before {
+    content: 'סמנו בשביל רקע שקוף';
+    position: absolute;
+    top: -22px;
+    left: -80px;
+    text-overflow: none;
+    width: 160px;
+    color: rgb(206, 206, 206);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+}
+
+
+/*icon_library*/
+#icon_library ,#hotspot_list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#icon_library > div {
+    width: 80px;
+    height: 80px;
+    margin: 15px;
+}
+
+#hotspot_list > div {
+    padding: 5px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#hotspot_list > div > .text_input {
+    margin: 5px;
+    padding: 5px;
+}
+
+#search_icon_input,#main_image_input_link {
+    padding: 5px;
+    width: 80%;
+}
+
+#search_icon_input:focus,#main_image_input_link:focus {
+    background-color: rgb(216, 216, 216);
+}
+
+#hotspot_target_input {
+    margin-top: 0px;
+}
+
+
+/*page navigation*/
+.page_nav {
+    z-index: 1;
+    height: 20px;
+    padding: 15px;
+    background:#172555;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page_button {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color:rgb(223, 223, 223);
+}
+
+.page_button:hover {
+    background-color:rgb(240, 240, 240);
+}
+
+.page_button img {
+    width: 70%;
+    height: 70%;
+    transition: 0.05s;
+}
+
+.page_button:hover img {
+    transform: scale(1.2);
+}
+
+#page_text {
+    width: 140px;
+    direction: ltr;
+    font-size: 17px;
+    color: rgb(168, 168, 168);
+}
+
+.icon_button {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(198, 198, 255);
+    transition: 0.1s ease-in-out;
+}
+
+.icon_button:hover {
+    background-color: rgba(225, 225, 255);
+}
+
+.icon_button img {
+    width: 80%;
+    height: 80%;
+    transition: 0.05s;
+}
+
+.icon_button:hover img {
+    transform: scale(1.12);
+}
+
+#delete_hotspot_button {
+    height: 35px;
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    color:white;
+    font-size: 17px;
+    font-family: inherit;
+    align-self: flex-start;
+    background-color:rgb(87, 18, 18);
+    border: none;
+    transition: 0.1s;
+}
+
+#delete_hotspot_button:hover {
+    background-color:rgb(139, 26, 26);
+}
+
+#delete_hotspot_button i {
+    transition: 0.1s;
+}
+
+#delete_hotspot_button:hover i {
+    transform: scale(1.1);
+}
+
+
+
+/*save button*/
+#save_button_div {
+    z-index: 2;
+    width: 100%;
+    height: 110px;
+    background-color: #121d42;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#save_button {
+    width: 90%;
+    height: 60%;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-purple);
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 0.1s;
+}
+
+#save_button:hover {
+    transform: scale(1.03);
+    background-color: rgb(198, 198, 255);
+    transition: 0.1s;
+}
+
+#save_button i {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+/*hotspot-caster-sutff*/
+#main_m {
+    margin: 0;
+    width: 70vw;
+    height: 88vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    position: absolute;
+    left: 0px;
+}
+
+#main_image_container {
+    user-select: none;
+    position: relative;
+    margin: auto 0;
+    width: 90%;
+    max-width: 1000px;
+}
+
+#main_image {
+    margin: auto 0;
+    width: 100%;
+    max-width: 1000px;
+}
+
+#main_svg_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#main_text_div {
+    background-color: rgba(128, 128, 128, 0.274);
+    margin: auto 0;
+    width: 100%;
+    height: 700px;
+    color: rgba(128, 128, 128, 0.596);
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+}
+
+.svg_shape {
+    fill: rgba(51, 51, 51, 0.3);
+    stroke: rgba(165, 165, 165, 0.8);
+    stroke-width: 2px;
+}
+
+.svg_shape:hover {
+    fill: rgba(92, 92, 92, 0.3);
+    stroke: rgba(165, 165, 165, 0.8);
+    stroke-width: 2px;
+}
+
+.svg_shape.selected {
+    fill: rgba(118, 248, 101, 0.3);
+    stroke: rgba(29, 128, 15, 0.671);
+}
+
+.svg_handle {
+    cursor:move;
+    fill: rgba(177, 177, 177, 0.8);
+    stroke: rgba(59, 59, 59, 0.8);
+    stroke-width: 1.5px;
+}
+
+.svg_handle:hover {
+    fill: rgba(219, 219, 219, 0.8);
+}

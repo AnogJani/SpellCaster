@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="../PublishingImages/spell_caster_logo.ico">
+    <link rel="stylesheet" href="../SiteAssets/fontawesome-free-6.0.0-beta3-web/css/all.css">
+    <link rel="stylesheet" href="styles/page_base.css">
+    <link rel="stylesheet" href="styles/styles_home_page.css">
+    <script src="open_in_chrome.js" defer></script>
+    <script src="page_base_script.js" defer></script>
+    <script src="home_page_script.js" defer></script>
+    <title>מחולל הכישופים - דף הבית</title> 
+</head>
+<body>
+    <!--Navigation Bar-->
+    <div class="nav_bar_padder"></div>
+    <nav class="nav_bar home_page" id="nav_bar"></nav>
+    <!--End Of Navigation Bar-->
+
+    <!--Titles-->
+    <img class="image_title" alt="כותרת" src="../PublishingImages/Spell-Caster-Title.png">
+    <p class="p_title" style="font-size: 1.4rem; margin: 0">הוספת אובייקטים מעוצבים לאתרי SP בלי לרשום שורת קוד אחת!</p>
+    <!--Page Content-->
+    <div class="page_content">
+
+        <!--Location Indicator-->
+        <div class="location_indicator" id="location_indicator">
+            <img class="location_image_indicator" id="location_image_indicator" src="../PublishingImages/none.PNG"></img>
+        </div>
+
+        <!--Shopping Container (Contains All The Items) Loaded With The Script "shopping_cart_loader.js"-->
+        <div class="shopping_container" id="shopping_container"></div>
+    </div>
+    <script src="shopping_cart_loader.js"></script>
+</body>

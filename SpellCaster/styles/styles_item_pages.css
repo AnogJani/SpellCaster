@@ -1,0 +1,414 @@
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    width: 98%;
+}
+
+.element_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--light-purple);
+    border-radius: 10px;
+    margin: 20px 100px;
+    background-color: rgba(212, 207, 255, 0.295);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.input_div {
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.element_title {
+    text-align: center;
+    font-size: 30px;
+    margin: 12px;
+}
+
+.input_lable {
+    text-align: center;
+}
+
+.input_lable.optional::after {
+    content: '(אפשרי)';
+    color: grey;
+    margin-right: 5px;
+    margin-left: 5px;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.input_description {
+    font-size: 1.2rem;
+}
+
+.text_input {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    margin:5px 30px;
+    padding: 10px 10px;
+    width: 90%;
+    border-radius: 50px;
+    border: 0.5px solid #bdbdbd;
+    text-align: center;
+    background-color: #ffffff;
+    color: #1d1d1d;
+}
+
+.text_input:focus {
+    outline: none;
+    background-color: #ededff;
+}
+
+.multiline_text_input {
+    resize: vertical;
+    border-radius: 0;
+    height: 17px;
+    min-height: 17px;
+}
+
+.color_input {
+    -webkit-appearance: none;
+    cursor: pointer;
+    border: 0.5px solid #bdbdbd;
+    margin: 15px;
+    width: 120px;
+    height: 30px;
+}
+
+.checkbox_input {
+    width:20px;
+    height:20px;
+    margin: 20px;
+    border: 0.5px solid #bdbdbd;
+    cursor: pointer;
+}
+
+.select_input {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    margin: 15px;
+    background-color: white;
+    border: 0.5px solid #bdbdbd;
+    font-family: inherit;
+    direction: ltr;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.select_input:focus {
+    outline-width: 0;
+}
+
+.range_input {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    margin: 15px;
+    font-family: inherit;
+    direction: ltr;
+    border-radius: 5px;
+}
+
+.range_input:focus {
+    outline-width: 0;
+}
+
+.number_input {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    margin: 15px;
+    background-color: white;
+    border: 0.5px solid #bdbdbd;
+    font-family: inherit;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.number_input:focus {
+    outline-width: 0;
+}
+
+.number_input::-webkit-inner-spin-button, .number_input::-webkit-outer-spin-button { /*the arrows on the number input type*/
+    transform: translateX(-10px);
+}
+
+.copy_button {
+    background-color: rgb(0, 134, 158);
+    color: white;
+    margin-right: 10px;
+}
+
+.delete_button {
+    background-color: rgb(155, 0, 0);
+    color: white;
+    margin-top: 20px;
+}
+
+.edit_button {
+    background-color: rgb(0, 134, 158);
+    color: white;
+    margin-top: 20px;
+    width: 200px;
+}
+
+.push_button {
+    background-color: rgb(0, 134, 158);
+    color: white;
+    margin-top: 20px;
+}
+
+.reset_button {
+    background-color: rgb(155, 0, 0);
+    color: white;
+    margin-top: 20px;
+}
+
+.edit_order_button {
+    background-color: rgb(0, 134, 158);
+    color: white;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.additional_links {
+    flex-direction: column;
+}
+
+.new_additional_links_field_title {
+    flex-direction: row;
+}
+
+.add_link_button, .remove_link_button {
+    cursor: pointer;
+    padding: 0;
+    font-size: 27px;
+    margin: 10px;
+    margin-top: 0;
+    background: none;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    color: rgb(184, 184, 184);
+}
+
+.add_link_button:hover, .remove_link_button:hover {
+    color: rgb(119, 119, 119);
+}
+
+.add_link_button:active, .remove_link_button:active {
+    color: rgb(56, 56, 56);
+}
+
+.final_code_copy {
+    font-family: Courier New, Courier, monospace;
+    font-size: 13px;
+    padding: 10px 10px;
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid rgb(192, 192, 192);
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    resize: none;
+    direction: ltr;
+}
+
+.code_preview_window {
+    background-color: #0000000e;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 40px;
+}
+
+.long_code_preview { /*mainly for items that dropdown*/
+    padding-bottom: 800px;
+}
+
+/*widths classes (used for inside of elements)*/
+.w100 {
+    width: 100% !important;
+}
+.w95 {
+    width: 95% !important;
+}
+.w90 {
+    width: 90% !important;
+}
+.w85 {
+    width: 85% !important;
+}
+.w80 {
+    width: 80% !important;
+}
+.w75 {
+    width: 75% !important;
+}
+.w70 {
+    width: 70% !important;
+}
+.w65 {
+    width: 65% !important;
+}
+.w60 {
+    width: 60% !important;
+}
+.w55 {
+    width: 55% !important;
+}
+.w50 {
+    width: 50% !important;
+}
+.w45 {
+    width: 45% !important;
+}
+.w40 {
+    width: 40% !important;
+}
+.w35 {
+    width: 35% !important;
+}
+.w30 {
+    width: 30% !important;
+}
+.w25 {
+    width: 25% !important;
+}
+.w20 {
+    width: 20% !important;
+}
+
+/*edit nodes window*/
+#edit_nodes_dialog_carpet {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    right:0;
+    z-index: 100;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+#edit_nodes_dialog_window {
+    background: rgb(229, 224, 255);
+    direction: ltr;
+    width: 600px;
+    height: 80%;
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+    overflow: hidden;
+}
+
+#edit_nodes_dialog_nav {
+    width: inherit;
+    top:0;
+    right:0;
+    background: rgb(255, 255, 255);
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.308);
+    z-index: 101;
+}
+
+#top_navi_dialog_buttons{
+    display: flex;
+}
+
+#dialog_main_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#edit_nodes_dialog_main {
+    overflow-y: auto;
+    margin: 5px;
+    padding: 5px;
+    height: 82%;
+}
+
+#edit_nodes_dialog_main::-webkit-scrollbar-track { /*small stupid adjustment to scroll bar in dialog*/
+    border-radius: 10px;
+}
+
+#edit_node_content_fields {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.node {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    direction: rtl;
+    overflow: auto;
+    padding: 3px;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: 0.1s;
+}
+
+.node:hover {
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.25) inset;
+}
+
+.node:active {
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.45) inset;
+}
+
+.node > div {
+    display: flex;
+    align-items: center;
+}
+
+.node > button {
+    color: inherit;
+    font-size: 16px;
+    padding: 3px;
+}
+
+.node > button:hover {
+    color: rgb(126, 126, 126);
+}
+
+.active_node {
+    color: white;
+    border: 0.5px solid rgba(255,255,255,0.5);
+    background-color: var(--deep-blue);
+}
+
+.active_node > button:hover {
+    color: rgb(175, 175, 175);
+}
+
+.order_number {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.first_node {
+    /*how to make first node pop out more*/
+}

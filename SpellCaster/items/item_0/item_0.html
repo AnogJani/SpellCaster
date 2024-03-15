@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="../../../PublishingImages/spell_caster_logo.ico">
+    <link rel="stylesheet" href="../../../SiteAssets/fontawesome-free-6.0.0-beta3-web/css/all.css">
+    <link rel="stylesheet" href="../../styles/page_base.css">
+    <link rel="stylesheet" href="../../styles/styles_item_pages.css">
+    <script src="../../open_in_chrome.js" defer></script>
+    <script src="../../page_base_script.js" defer></script>
+    <script src="../../general_item_script.js" defer></script>
+    <title>מחולל הכישופים</title>
+
+
+    <style>
+        .edit_images_buttons {
+            width: 1000px;
+            position: relative;
+            display: grid;
+            place-items: center;
+            padding-bottom: 30px;
+
+        }
+
+        .image_btn {
+            width: 80%;
+            height: 6vw;
+            transition: all 0.5s ease;
+            border-radius: 10px;
+
+
+        }
+        .image_btn:hover {
+            filter: drop-shadow(6px 12px 2px var(--light-purple));
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--Navigation Bar-->
+    <div class="nav_bar_padder"></div>
+    <nav class="nav_bar" id="nav_bar"></nav>
+    <!--End Of Navigation Bar-->
+    
+    <!--All The Elements-->
+    <div class="element_div">
+    <div class="flex"><h3 class="element_title">הוספת תמונות:</h3></div>
+    <div class="flex">
+        <div class="input_div">
+            <lable class="input_lable">קישור</lable>
+            <input type="url" class="text_input input1" id="link_input1" placeholder="הכנס קישור אליו יוביל הכפתור">
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">כיתוב</lable>
+            <input type="text" class="text_input input1" id="name_input1" placeholder="הכנס כיתוב">
+        </div>
+        <div class="input_div">
+            <lable class="input_lable tooltip">קישור לתמונה <i class="fas fa-circle-info info_tooltip"></i><span class="tooltiptext top">צריכים תמונה?<br>תוכלו להעזר ב<a href="../../image_caster.html" style="color:rgb(160, 195, 255);"><b>מחולל התמונות</b></a></span></lable>
+            <input type="url" class="text_input input1" id="image_input1" placeholder="הכנס קישור לתמונה מ-SP">
+        </div>
+    </div>
+    <div class="flex">
+        <button class="nami_button push_button" type="button" onclick="pushImageInfo()"><i class="fas fa-plus"></i> הוסף תמונה </button>
+    </div>
+    </div>
+    
+    <div class="element_div">
+    <div class="flex"><h3 class="element_title">הוספת לינקים תחתונים:</h3></div>
+    <div class="flex w80">
+        <div class="input_div">
+            <lable class="input_lable">קישור</lable>
+            <input type="url" class="text_input input2" id="link_input2" placeholder="הכנס קישור אליו יוביל הכפתור">
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">כיתוב</lable>
+            <input type="text" class="text_input input2" id="name_input2" placeholder="הכנס כיתוב">
+        </div>
+    </div>
+    <div class="flex">
+        <button class="nami_button push_button" type="button" onclick="pushLinkInfo()"><i class="fas fa-plus"></i> הוסף לינק </button>
+    </div>
+    </div>
+ 
+    <div class="element_div">
+        <div class="flex"><h3 class="element_title">הגדרות כלליות:</h3></div>
+        <div class="flex w70">
+            <div class="input_div">
+            <lable class="input_lable">צבע ראשי</lable>
+            <input type="color" class="color_input input3" id="color_input3" oninput="pushMainSettings();">
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">פונט</lable>
+            <select class="select_input input3 font_select_input" id="select_input3"  onchange="pushMainSettings();"></select>
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">הוספת קו חוצץ</lable>
+            <input type="checkbox" class="checkbox_input input3" id="checkbox_input3" onchange="pushMainSettings();" checked>
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">רקע מובהר במעבר עכבר על תמונות</lable>
+            <input type="checkbox" class="checkbox_input input3" id="image_bg_checkbox_input3" onchange="pushMainSettings();" checked>
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">רוחב תמונה</lable>
+            <input type="number" min="50" max="250" value="100" class="number_input input3 number_input" id="number_input3" onchange="pushMainSettings();"></input>
+        </div>
+        </div>
+    </div>
+    <!--End Of All The Elements-->
+    
+    <!--Bottom Functionality (Copy Code && Preview...)-->
+    <div class="flex">
+        <button class="nami_button copy_button" onclick="copy_code('final_code_copy');"><i class="fa-solid fa-copy"></i> העתק קוד </button>
+        <textarea class="final_code_copy" id="final_code_copy"></textarea>
+    </div>
+    <div class="flex"><h3 class="element_title">תצוגה מקדימה:</h3></div>
+    <div class="code_preview_window" id="code_preview_window">
+        <button class="text_button edit_text_button" onclick="edit_dialog();"><i class="fas fa-list-ol"></i>ערוך סדר</button>
+        <div class="code_preview" id="code_preview"></div>
+    </div>
+    
+    <script src="item_0.js"></script>
+</body>

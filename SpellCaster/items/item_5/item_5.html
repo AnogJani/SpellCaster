@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="../../../PublishingImages/spell_caster_logo.ico">
+    <link rel="stylesheet" href="../../../SiteAssets/fontawesome-free-6.0.0-beta3-web/css/all.css">
+    <link rel="stylesheet" href="../../styles/page_base.css">
+    <link rel="stylesheet" href="../../styles/styles_item_pages.css">
+    <link rel="stylesheet" href="../../styles/styles_image_n_hotspot_caster.css">
+    <script src="../../open_in_chrome.js" defer></script>
+    <script src="../../page_base_script.js" defer></script>
+    <script src="../../general_item_script.js" defer></script>
+    <!--<script src="/_layouts/15/init.js" defer></script>-->
+    <title>מחולל הקישורים 2</title>
+</head>
+<body>
+    <!--Navigation Bar-->
+    <div class="nav_bar_padder"></div>
+    <nav class="nav_bar" id="nav_bar"></nav>
+    <!--End Of Navigation Bar-->
+    
+    <div id="side_bar">
+        <div id="side_bar_menus">
+            <button onclick="handle_side_bar_menu_buttons(this);" type="button" class="side_bar_menu_button"><i class="fa-regular fa-image"></i> תמונה</button>
+            <button onclick="handle_side_bar_menu_buttons(this);" type="button" class="side_bar_menu_button"><i class="fa fa-link"></i> לינקים</button>
+        </div>
+        <div id="side_bar_content">
+            <!--IMAGE MENU-->
+            <div class="side_bar_content_menu" id="side_bar_content_menu_image">
+                <h5><div></div><span>תמונה:</span><div></div></h5>
+                <input type="link" id="main_image_input_link" class="text_input" placeholder="הזן לינק לתמונה" oninput="pushImageInfo();">
+                <h5><div></div><span>גודל:</span><div></div></h5>
+                <h4 style="font-size:17px;color:rgb(177, 177, 177)"><i class="fas fa-circle-info"></i>גודל הכישוף ישתנה רק בדף עצמו. השינוי לא יוצג בתצוגה המקדימה</h4>
+                <span style="font-size:15px;color:rgb(177, 177, 177)">פיקסלים</span><input type="number" id="image_width_input" class="number_input" oninput="pushMainSettings();" style="width: 50px">
+                <h5><div></div><span>הצבה במרכז הWP:</span><div></div></h5>
+                <input type="checkbox" class="checkbox_input" id="checkbox_input_center" onchange="pushMainSettings();" checked>
+            </div>
+            <!--BACKGROUND MENU-->
+            <div class="side_bar_content_menu" id="side_bar_content_menu_background">
+                <h5><div></div><span>הוספת צורה:</span><div></div></h5>
+                <div class="shape_buttons" style="display:flex;align-items:center;justify-content:center;">
+                    <button type="button" class="shape_button" onclick="createShape('rect');"><img class="shape_button_image" src="../../PublishingImages/shape_rect.png" alt="rect" title='מרובע (R)'></button>
+                    <button type="button" class="shape_button" onclick="createShape('circle');"><img class="shape_button_image" src="../../PublishingImages/shape_circle.png" alt="circle" title='עיגול (C)'></button>
+                    <button type="button" class="shape_button" onclick="createShape('polygon');"><img class="shape_button_image" src="../../PublishingImages/shape_polygon.png" alt="polygon" title='מצולע חופשי (P)'></button>
+                </div>
+                <h5><div></div><span>עריכת לינקים:</span><div></div></h5>
+                <div class="page_nav">
+                    <div class="page_button right" onclick="focusHotspot(selected_hotspot+1);generate_hotspot_list_from_array();">
+                        <img src="../../../icon_lib/caret-right.svg" alt="R">
+                    </div>
+                    <p id="page_text" style="width: 70px;"></p>
+                    <div class="page_button left" onclick="focusHotspot(selected_hotspot-1);generate_hotspot_list_from_array();">
+                        <img src="../../../icon_lib/caret-left.svg" alt="L">
+                    </div>
+                </div>
+                <div id="hotspot_list"></div>
+            </div>
+        </div>
+        <div id="save_button_div"><a id="save_button" onclick="GiveUserOutput();copy_code('final_code_copy');"><i class="fa-regular fa-copy"></i>העתק קוד</a></div>
+    </div>
+
+    <main class="main_m" id="main_m">
+        <div id="main_image_container">
+            <img id="main_image_width_tester" style="z-index:-1;opacity:0;position:absolute;display:none" onload="is_real_image = true;image_width = main_image_width_tester.width;document.getElementById('image_width_input').value = image_width;svg_element.setAttribute('width',image_element.width);svg_element.setAttribute('height',image_element.height);pushMainSettings();drawAllHotspots();GiveUserOutput();">
+            <img id="main_image" onerror="this.src='../../PublishingImages/error.png';">
+            <svg id="main_svg_container" width="0" height="0"></svg>
+            <div id="main_text_div">ראשית הכנס קישור לתמונה בחלונית "תמונה" וודא שהקישור תקין</div>
+        </div>
+    </main>
+
+    <textarea class="final_code_copy" id="final_code_copy" style="opacity:0;position:absolute;top:-100px;"></textarea>
+    <script src="item_5.js"></script>
+</body>

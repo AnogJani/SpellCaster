@@ -1,0 +1,142 @@
+.page_content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: normal;
+    flex-direction: row-reverse;
+    margin-top: 90px;
+}
+
+.location_indicator {
+    position: sticky;
+    align-self: flex-start;
+    top: 150px;
+}
+
+.location_image_indicator {
+    width: 200px;
+    height: 200px;
+    border-radius:10px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.356) 0px 5px 15px;
+    position: relative;
+}
+
+.shopping_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color:white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 2px #0000003d;
+    width: 80%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.image_title {
+    display: block;
+    margin-top: 100px;
+    margin-bottom: -60px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
+
+.item {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30%;
+    height: auto;
+    margin: 1.55%;
+    padding: 0px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #d8e2ff;
+    transition: 0.1s ease-in-out;
+}
+
+.item:hover {
+    background-color: #c4d3ff;
+    transform: translateY(-5px);
+}
+
+.item_title {
+    color: #010025;
+    text-align: center;
+    font-size: 24px;
+}
+
+.item_image {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 65%;
+    filter: drop-shadow(1px 1px 4px #00000066)
+}
+
+.new_item::before {
+    content: 'חדש!';
+    background-color:rgb(143, 255, 199);
+}
+
+.soon_item::before {
+    content: 'בקרוב!';
+    background-color:rgb(243, 255, 130);
+}
+
+.new_capabilities_item::before {
+    content: 'יכולות חדשות!';
+    background-color:rgb(245, 130, 255);
+    width: 120px;
+    left: 65% !important;
+}
+
+.new_item::before, .soon_item::before, .new_capabilities_item::before {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    display: block;
+    position: absolute;
+    border-radius: 15px;
+    top: -5%;
+    left: 85%;
+    padding: 8px;
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.new_item:hover::before, .soon_item:hover::before, .new_capabilities_item:hover::before {
+    transform: translateY(-5px);
+}
+
+.location_indicator::before {
+    content: 'מכוון המיקום:';
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    width: 100%;
+    top: -50px;
+    left: 0%;
+    color: black;
+}
+
+.shopping_container::before {
+    content: 'סל הקניות:';
+    font-size: 26px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    width: 100%;
+    top: -50px;
+    left: 0%;
+    color: black;
+}

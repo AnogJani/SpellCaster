@@ -1,0 +1,632 @@
+:root {
+    --light-purple: #a5a5ff;
+    --deep-blue: #061b75;
+}
+
+html {
+    unicode-bidi: embed;
+}
+
+body {
+    background: linear-gradient(160deg,rgb(249,252,255) 0%, rgb(245,250,255) 35%, var(--light-purple) 100%); /*fallback*/
+    background-image: url("../../PublishingImages/Spell_Caster_Background.PNG");
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    direction: rtl;
+    transition: none;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+.h1_title {
+    font-size: 2.5rem;
+    margin-top: 150px;
+    text-align: center;
+    position: relative;
+    color: #010025;
+    margin-bottom: 20px;
+}
+
+.p_title {
+    font-family: inherit;
+    font-size: 1.2rem;
+    text-align: center;
+    position: relative;
+    color: #010025;
+    margin: 14px 0px;
+}
+
+.nav_bar_padder {
+    margin-top: 100px;
+}
+
+.nav_bar {
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: var(--deep-blue);
+    margin: 0px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    box-shadow: 0px 2px 10px 2px #00000088;
+}
+
+.nav_bar_logo_image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 10px;
+    margin-right: 30px;
+}
+
+.nav_bar_link_list {
+    list-style: none;
+    color: white;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    padding-right: 20px;
+}
+
+.nav_bar_link {
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    color: #bebebe;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+    margin-right: 4px;
+    margin-left: 4px;
+    transition: 0.3s;
+}
+
+.nav_bar_link:hover {
+    color: #e7e7e7;
+}
+
+.nav_bar_icon {
+    margin-left: 5px !important;
+    font-size: 16px !important;
+}
+
+.active {
+    color: white !important;
+}
+
+.nav_bar_link > .star {
+    visibility: hidden; /*innitial value, will be changed later in js*/
+    --size: 20px;
+
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    top: var(--top_star);
+    left: var(--left_star);
+    transform-origin: center;
+    animation: scale_stars 1500ms ease forwards;
+}
+
+.nav_bar_link > .star > .star_icon {
+    z-index: 1;
+    display: block;
+    color: rgb(237, 182, 255);
+    transform-origin: center;
+    animation: rotate_stars 2s linear infinite;
+}
+
+@keyframes pop {
+    from, to, 30%, 70% {
+        transform-origin: center;
+        transform: scale(1);
+        color: #a3a3a3;
+    }
+    50% {
+        transform-origin: center;
+        transform: scale(1.2);
+        color: rgb(225, 196, 235);
+    }
+}
+
+@keyframes scale_stars {
+    from, to {
+        transform: scale(0);
+        opacity: 100%;
+    }
+    50% {
+        transform: scale(0.7);
+        opacity: 60%;
+    }
+}
+
+@keyframes rotate_stars {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+.the_rest_of_the_nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 30px;
+}
+
+.large_button_nav_bar {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 15px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.large_button_nav_bar:focus {
+    outline-width: 0px;
+}
+
+.large_button_nav_bar:hover {
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.404);
+    transform: scale(1.06);
+}
+
+.large_button_nav_bar:active {
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.404) inset;
+}
+
+.large_button_nav_bar.premade_code {
+    background-color: rgb(143, 255, 199);
+}
+.large_button_nav_bar.premade_code:hover {
+    background-color: rgb(194, 255, 225);
+}
+
+#support_image {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    bottom: 10px;
+    left: 10px;
+}
+
+.support_logo_image {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.support_logo_image:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.623);
+}
+
+.support_text {
+    margin: 0;
+    font-size: 17px;
+    color: rgb(148, 148, 148);
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.support_text:hover {
+    color: rgb(66, 66, 66);
+    text-decoration: underline;
+}
+
+/*nami button*/
+.nami_button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nami_button:focus {
+    outline-width: 0px;
+}
+
+.nami_button:hover {
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.404);
+}
+
+.nami_button:active {
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.404) inset;
+}
+
+.nami_button:disabled, .nami_button[disabled] {
+    cursor: default;
+}
+
+.nami_button:disabled:hover, .nami_button[disabled]:hover {
+    box-shadow: none;
+}
+
+.nami_button:disabled:active, .nami_button[disabled]:active {
+    box-shadow: none;
+}
+
+/*font-awesome icons*/
+.fa, .fas, i {
+    margin: 3px;
+    font-size:inherit;
+    color: inherit;
+}
+
+/*text button (a button that displays as normal text)*/
+.text_button {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    text-align: center;
+    color: rgb(32, 147, 209);
+    text-decoration-line: underline;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.2rem;
+    transition: 0.15s;
+}
+
+.text_button:hover {
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.267);
+    color: rgb(38, 121, 165);
+}
+
+.text_button:active {
+    color: rgb(0, 54, 85);
+}
+
+.text_button:focus {
+    outline-width: 0px;
+}
+
+.edit_text_button {
+    color: rgb(94, 94, 94);
+    font-size: 1.15rem;
+    text-decoration-line: none;
+}
+
+.edit_text_button:hover {
+    color: rgb(71, 71, 71);
+    text-decoration-line: underline;
+}
+
+/*notification (a pop up notification displayed when calling the function "notify")*/
+
+.notification {
+    position: fixed;
+    z-index: -1;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row-reverse;
+    min-width: 240px;
+    max-width: 320px;
+    height: 75px;
+    right: 20px;
+    bottom: 0px;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(36, 36, 36);
+    box-shadow: 0 0 8px 3px #00000034;
+    opacity: 0;
+}
+
+.notification_icon {
+    font-size: 35px;
+    margin-left: 10px;
+}
+
+.notification_message {
+    font-family: inherit;
+    font-size: 18px;
+}
+
+@keyframes pop_up_notification {
+    0% {
+        z-index: -1;
+        opacity: 0;
+        bottom: 0px;
+    }
+    1% {
+        z-index: 1000;
+    }
+    10% {
+        opacity: 1;
+        bottom: 20px;
+    }
+    90% {
+        opacity: 1;
+        bottom: 20px;
+    }
+    99% {
+        z-index: 1000;
+    }
+    100% {
+        z-index: -1;
+        opacity: 0;
+        bottom: 0px;
+    }
+}
+
+/*loader*/
+
+.loader_wrapper {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s
+}
+
+.loader {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side,var(--light-purple) 94%, #0000) top/9px 9px no-repeat,
+    conic-gradient(#0000 30%, var(--light-purple));
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+    animation: spinner-c7wet2 1s infinite linear;
+}
+
+@keyframes spinner-c7wet2 {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+/*general dialog*/
+.general_dialog_carpet {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    right:0;
+    z-index: 200;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.general_dialog_window {
+    background: rgb(255, 255, 255);
+    direction: ltr;
+    border-radius: 10px;
+    border: 1px solid rgb(161, 161, 161);
+    overflow: hidden;
+}
+
+.dialog_button {
+    margin-top: 0;
+    width: 25%;
+    height: 50px;
+    font-size: 18px;
+}
+
+.dialog_button:disabled, .dialog_button[disabled] {
+    color: rgb(129, 129, 129);
+    background: rgb(194, 194, 194);
+}
+
+.dialog_button i {
+    font-size: 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+.dialog_exit_button, .dialog_back_button {
+    margin: 10px;
+    font-size: 27px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.dialog_exit_button {color: rgb(185, 0, 0);margin-right: 0;}
+.dialog_back_button {color: rgb(119, 119, 119);margin-left: 0;}
+
+.dialog_exit_button:hover, .dialog_back_button:hover {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.473);
+}
+
+.dialog_exit_button:hover {color: rgb(131, 0, 0);}
+.dialog_back_button:hover {color: rgb(63, 63, 63);}
+
+.dialog_exit_button:focus, .dialog_back_button:focus {
+    outline-width: 0px;
+}
+
+/*premade code*/
+
+.premade_code_wrapper {
+    margin-top: 50px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.premade_code_textarea {
+    width: 60%;
+    height: 50%;
+    font-size: 14px;
+    margin:5px 30px;
+    padding: 10px 10px;
+    border: 0.5px solid #bdbdbd;
+    background-color: #ffffff;
+    color: #1d1d1d;
+    transition: 0.1s;
+    font-family: Courier New, Courier, monospace;
+    box-sizing: border-box;
+    border-radius: 7px;
+    resize: none;
+}
+
+.premade_code_textarea:focus {
+    outline: none;
+    background-color: rgba(231, 229, 255, 0.671);
+}
+
+.load_button {
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: rgb(231, 108, 255);
+    color: black;
+}
+
+.load_button:hover {
+    font-size: 19px;
+}
+
+/*spell book*/
+#spell_book_conainer {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 30px;
+}
+
+#spell_book_conainer iframe {
+    border: 2px solid var(--light-purple);
+}
+
+/*tooltip + tooltip_text (like a small dropdown on hover)*/
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 5px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+}
+.tooltip .tooltiptext.bottom {
+    width: 200px;
+    margin-left: -100px; /*use half of width*/
+    top: 120%;
+    left: 50%;
+}
+.tooltip .tooltiptext.top {
+    width: 200px;
+    margin-left: -100px; /*use half of width*/
+    bottom: 120%;
+    left: 50%;
+}
+
+.tooltip .tooltiptext::after, .tooltip .tooltiptext::before {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left:50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+}
+
+.tooltip .tooltiptext.bottom::after {
+    bottom: 100%;
+    border-color: transparent transparent black transparent;
+}
+
+.tooltip .tooltiptext.top::after {
+    top: 100%;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip .tooltiptext.bottom::before, .tooltip .tooltiptext.top::before {
+    width: 110%;
+    height: 15px;
+    left: 0%;
+    border-width: 0px;
+}
+
+.tooltip .tooltiptext.bottom::before {
+    top: -10px;
+}
+
+.tooltip .tooltiptext.top::before {
+    bottom: -10px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip .fas.info_tooltip {
+    color: var(--deep-blue);
+    transition: 0.1s ease;
+}
+
+.tooltip:hover .fas.info_tooltip {
+    transform: scale(1.3);
+}
+
+/*Scroll Bar Settings*/
+
+::-webkit-scrollbar {
+    width: 10px;
+    opacity: 0;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--deep-blue);
+}
+
+/*Sellection*/
+
+::selection {
+    background: var(--deep-blue);
+    color: white;
+}
+
+input {
+    caret-color: var(--deep-blue);
+}
+
+input[type="range"], input[type="color"] {
+    cursor: pointer;
+}

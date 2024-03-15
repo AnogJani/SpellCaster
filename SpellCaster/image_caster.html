@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="../PublishingImages/spell_caster_logo.ico">
+    <link rel="stylesheet" href="../SiteAssets/fontawesome-free-6.0.0-beta3-web/css/all.css">
+    <link rel="stylesheet" href="styles/page_base.css">
+    <link rel="stylesheet" href="styles/styles_item_pages.css">
+    <link rel="stylesheet" href="styles/styles_image_n_hotspot_caster.css">
+    <script src="open_in_chrome.js" defer></script>
+    <script src="page_base_script.js" defer></script>
+    <script src="image_caster.js" defer></script>
+    <title>מחולל התמונות</title> 
+</head>
+<body>
+    <!--Navigation Bar-->
+    <div class="nav_bar_padder"></div>
+    <nav class="nav_bar image_caster_page" id="nav_bar"></nav>
+    <!--End Of Navigation Bar-->
+
+    
+    <div id="side_bar">
+        <div id="side_bar_menus">
+            <button onclick="handle_side_bar_menu_buttons(this);" type="button" class="side_bar_menu_button"><i class="fa-regular fa-object-group"></i> רקע</button>
+            <button onclick="handle_side_bar_menu_buttons(this);" type="button" class="side_bar_menu_button"><i class="fa-regular fa-image"></i> תמונה</button>
+        </div>
+        <div id="side_bar_content">
+            <!--BACKGROUND MENU-->
+            <div class="side_bar_content_menu" id="side_bar_content_menu_background">
+                <h5><div></div><span>רקע:</span><div></div></h5>
+                <p>צבע:</p>
+                <div style="display:flex;flex-direction:column;justify-content:center;align-items:center">
+                    <input type="color" id="background_color_input" oninput="update();" value="#FFFFFF">
+                    <input type="checkbox" class="checkbox_input" id="background_transparent_input" oninput="update();">
+                </div>
+                <p>צורה:</p>
+                <div style="display:flex;align-items:center;justify-content:center;">
+                    <input type="radio" id="background_shape_rect" name="background_shape" class="background_shape_radio" oninput="update();">
+                    <label for="background_shape_rect"><div class="image_radio_button"><div class="rect_button"></div></div></label>
+                    <input type="radio" id="background_shape_circle" name="background_shape" class="background_shape_radio" oninput="update();" checked>
+                    <label for="background_shape_circle"><div class="image_radio_button"><div class="circle_button"></div></div></label>
+                </div>
+                <div class="padder"></div>
+                <h5><div></div><span>היקף:</span><div></div></h5>
+                <p>צבע:</p>
+                <input type="color" id="outline_color_input" oninput="update();" value="#000000">
+                <p>עובי:</p>
+                <input type="range" min="0" value="35" max="50" id="outline_width_input" oninput="update_sliders();update();">
+            </div>
+            <!--IMAGE MENU-->
+            <div class="side_bar_content_menu" id="side_bar_content_menu_image">
+                <h5><div></div><span>כללי:</span><div></div></h5>
+                <p>גודל התמונה:</p>
+                <input type="range" min="200" value="450" max="700" id="image_size_input" oninput="update_sliders();update();">
+                <div class="padder"></div>
+                <h5><div></div><span>תמונה:</span><div></div></h5>
+                <p>בחירת תמונה מהמחשב:</p>
+                <div style="display:flex;align-items:center;justify-content:center;">
+                    <input type="file" id="image_file_input" accept="image/*">
+                </div>
+                <h4><div></div>או:<div></div></h4>
+                <p>צבע אייקון:</p>
+                <input type="color" id="icon_color_input" oninput="update();" value="#000000">
+                <p>בחירת אייקון:</p>
+                <input type="text" class="text_input" id="search_icon_input" placeholder="חיפוש אייקון באנגלית" oninput="generate_icon_buttons_from_links_array();">
+                <div class="page_nav">
+                    <div class="page_button right" onclick="icon_library_page_number++;generate_icon_buttons_from_links_array();">
+                        <img src="../icon_lib/caret-right.svg" alt="R">
+                    </div>
+                    <p id="page_text"></p>
+                    <div class="page_button left" onclick="icon_library_page_number--;generate_icon_buttons_from_links_array();">
+                        <img src="../icon_lib/caret-left.svg" alt="L">
+                    </div>
+                </div>
+                <div id="icon_library"></div>
+            </div>
+        </div>
+        <div id="save_button_div"><a id="save_button" download="מחולל התמונות" onclick="update();"><i class="fa-regular fa-save"></i>שמור</a></div>
+    </div>
+
+    <main id="main">
+        <div id="canvas_div">
+            <canvas class="canvas" id="canvas" height="700px" width="700px"></canvas>
+        </div>
+    </main>
+</body>

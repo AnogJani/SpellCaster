@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="../../../PublishingImages/spell_caster_logo.ico">
+    <link rel="stylesheet" href="../../../SiteAssets/fontawesome-free-6.0.0-beta3-web/css/all.css">
+    <link rel="stylesheet" href="../../styles/page_base.css">
+    <link rel="stylesheet" href="../../styles/styles_item_pages.css">
+    <script src="../../open_in_chrome.js" defer></script>
+    <script src="../../page_base_script.js" defer></script>
+    <script src="../../general_item_script.js" defer></script>
+    <title>מחולל הכישופים</title>
+    <!-- Code Preview Style -->
+    <style>
+        .preview_chrome_nav,.preview_SP_nav {
+            width: 1000px;
+        }
+        .preview_SP_nav {
+            display: none;
+        }
+        .preview_logo_chrome_nav {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: calc(50% - 490px);
+            top: 4px;
+            filter: drop-shadow(0px 0px 1px rgb(255,255,255));
+        }
+        .preview_background {
+            width: 1000px;
+            height: 500px;
+            background: linear-gradient(135deg,rgb(255, 255, 255),rgb(231, 231, 231));
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            overflow-y: scroll;
+        }
+        .preview_top_nav,.preview_side_nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            display: none;
+        }
+        .preview_side_nav {
+            top: 20px;
+        }
+        .code_preview {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!--Navigation Bar-->
+    <div class="nav_bar_padder"></div>
+    <nav class="nav_bar" id="nav_bar"></nav>
+    <!--End Of Navigation Bar-->
+    
+    <!--All The Elements-->
+    <div class="element_div">
+    <div class="flex"><h3 class="element_title">הוספת תמונת רקע</h3></div>
+    <div class="flex w50">
+        <div class="input_div">
+        <lable class="input_lable">קישור לתמונת רקע (מתוך האתר)</lable>
+        <input type="url" class="text_input input1" id="image_input1" placeholder="הרקע הממולץ יהיה בגובה 970 פיקסלים וברוחב 1920 פיקסלים">
+        </div>
+    </div>
+    <div class="flex">
+        <button class="nami_button push_button" type="button" onclick="pushImageInfo()"><i class="fas fa-plus"></i>החל תמונה</button>
+    </div>
+    </div>
+
+    <div class="element_div">
+    <div class="flex"><h3 class="element_title">הוספת אייקון לאתר</h3></div>
+    <div class="flex w50">
+        <div class="input_div">
+        <lable class="input_lable">קישור לאיקון (מתוך האתר)</lable>
+        <input type="url" class="text_input input1" id="logo_input1" placeholder="האייקון המומלץ יהיה בגודל 100x100 פיקסלים">
+        </div>
+    </div>
+    <div class="flex">
+        <button class="nami_button push_button" type="button" onclick="pushLogoInfo()"><i class="fas fa-plus"></i>החל אייקון</button>
+    </div>
+    </div>
+
+    <div class="element_div">
+        <div class="flex"><h3 class="element_title">הגדרות כלליות:</h3></div>
+        <div class="flex w80">
+            <div class="input_div">
+                <lable class="input_lable">העלמת ניווט צד ימין בדף</lable>
+                <input type="checkbox" class="checkbox_input input3" id="checkbox1_input3" onchange="pushMainSettings();" checked>
+            </div>
+            <div class="input_div">
+                <lable class="input_lable tooltip">הסתרת פירורי לחם וניווט SharePoint</lable>
+                <input type="checkbox" class="checkbox_input input3" id="checkbox5_input3" onchange="pushMainSettings();" checked>
+            </div>
+            <div class="input_div">
+                <lable class="input_lable tooltip">העלמת כותרת אתר וניווט עליון</lable>
+                <input type="checkbox" class="checkbox_input input3" id="checkbox2_input3" onchange="pushMainSettings();" checked>
+            </div>
+            <div class="input_div">
+                <lable class="input_lable">רקע מקובע בעת גלילה</lable>
+                <input type="checkbox" class="checkbox_input input3" id="checkbox3_input3" onchange="pushMainSettings();" checked>
+            </div>
+            <div class="input_div">
+                <lable class="input_lable">הסרת גלילה בדף</lable>
+                <input type="checkbox" class="checkbox_input input3" id="checkbox4_input3" onchange="pushMainSettings();">
+            </div>
+        </div>
+</div>
+    <!--End Of All The Elements-->
+    
+    <!--Bottom Functionality (Copy Code && Preview...)-->
+    <div class="flex">
+        <button class="nami_button copy_button" onclick="copy_code('final_code_copy');"><i class="fa-solid fa-copy"></i> העתק קוד </button>
+        <textarea class="final_code_copy" id="final_code_copy"></textarea>
+    </div>
+    <div class="flex"><h3 class="element_title">תצוגה מקדימה:</h3></div>
+    <div class="code_preview_window" id="code_preview_window">
+        <div class="code_preview" id="code_preview" style="display:flex;align-items:center;flex-direction:column">
+            <!-- <img id="code_preview_image" onerror="this.src='../../PublishingImages/error.png';this.style.maxWidth='25%'"> -->
+            <img class="preview_chrome_nav" src="../../PublishingImages/chrome_nav.png">
+            <img id="preview_logo" class="preview_logo_chrome_nav" src="http://spellcaster.sites.airnet/PublishingImages/SP_logo.png">
+            <img id="preview_SP_nav" class="preview_SP_nav" src="../../PublishingImages/SharePoint_nav.png">
+            <span id="preview_background" class="preview_background">
+                <img id="preview_top_nav" class="preview_top_nav" src="../../PublishingImages/top_nav.png">
+                <img id="preview_side_nav" class="preview_side_nav" src="../../PublishingImages/side_nav.png">
+                <div style="position:absolute; bottom: -50px; height: 10px; width: 50%;"></div>
+            
+            </span>
+        </div>
+    </div>
+    
+    <script src="item_1.js"></script>
+</body>

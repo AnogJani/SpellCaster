@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="../../../PublishingImages/spell_caster_logo.ico">
+    <link rel="stylesheet" href="../../../SiteAssets/fontawesome-free-6.0.0-beta3-web/css/all.css">
+    <link rel="stylesheet" href="../../styles/page_base.css">
+    <link rel="stylesheet" href="../../styles/styles_item_pages.css">
+    <script src="../../open_in_chrome.js" defer></script>
+    <script src="../../page_base_script.js" defer></script>
+    <script src="../../general_item_script.js" defer></script>
+    <title>מחולל הכישופים</title>
+</head>
+<body>
+    <!--Navigation Bar-->
+    <div class="nav_bar_padder"></div>
+    <nav class="nav_bar" id="nav_bar"></nav>
+    <!--End Of Navigation Bar-->
+    
+    <!--All The Elements-->
+    <div class="element_div">
+    <div class="flex"><h3 class="element_title">הוספת תמונות:</h3></div>
+    <div class="flex">
+        <div class="input_div">
+            <lable class="input_lable">קישור לתמונה</lable>
+            <input type="url" class="text_input input1" id="image_input1" placeholder="הכנס קישור לתמונה מ-SP">
+        </div>
+        <div class="input_div">
+            <lable class="input_lable optional">קישור</lable>
+            <input type="url" class="text_input input1" id="link_input1" placeholder="הכנס קישור">
+        </div>
+    </div>
+    <div class="flex">
+        <button class="nami_button push_button" type="button" onclick="pushSlideInfo()"><i class="fas fa-plus"></i> הוסף תמונה </button>
+    </div>
+    </div>
+ 
+    <div class="element_div">
+        <div class="flex"><h3 class="element_title">הגדרות כלליות:</h3></div>
+        <div class="flex w90">
+            <div class="input_div">
+            <lable class="input_lable">צבע ראשי</lable>
+            <input type="color" class="color_input input3" id="color_input3" oninput="pushMainSettings();" value="#FFFFFF">
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">גובה הגלריה</lable>
+            <input type="number" min="100" max="1000" value="500" step="10" class="number_input input3" id="height_input3" onchange="pushMainSettings();"></input>
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">הפעלה אוטומטית</lable>
+            <input type="checkbox" class="checkbox_input input3" id="checkbox_input3" onchange="pushMainSettings();">
+        </div>
+        <div class="input_div">
+            <lable class="input_lable">איטיות הצגת התמונות בהפעלה אוטומטית</lable>
+            <input type="number" min="2" max="60" value="10" class="number_input input3" id="second_input3" onchange="pushMainSettings();"></input>
+        </div>
+        </div>
+    </div>
+    <!--End Of All The Elements-->
+    
+    <!--Bottom Functionality (Copy Code && Preview...)-->
+    <div class="flex">
+        <button class="nami_button copy_button" onclick="copy_code('final_code_copy');"><i class="fa-solid fa-copy"></i> העתק קוד </button>
+        <textarea class="final_code_copy" id="final_code_copy"></textarea>
+    </div>
+    <div class="flex"><h3 class="element_title">תצוגה מקדימה:</h3></div>
+    <div class="code_preview_window" id="code_preview_window">
+        <button class="text_button edit_text_button" onclick="edit_nodes(getSlides(),0);"><i class="fas fa-list-ol"></i>ערוך סדר</button>
+        <div class="code_preview" id="code_preview"></div>
+    </div>
+    
+    <script src="gallery_functionality_code.js" id="gallery_functionality_code"></script>
+    <script src="item_8.js"></script>
+</body>
