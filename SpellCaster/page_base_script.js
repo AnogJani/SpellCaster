@@ -9,7 +9,7 @@ let spell_book_page_identifier = "";
 let image_caster_page_identifier = "";
 let premade_code_page_identifier = "";
 
-let site_url = "http://spellcaster.sites.airnet";
+let site_url = "https://anogjani.github.io/SpellCaster";
 
 let logging_delay_in_secs = 1; //page loading will take effect only after this amount of secs have passed in the page
 
@@ -87,8 +87,8 @@ function create_support_image () {
     let support_element = document.createElement("div");
     support_element.setAttribute("id","support_image");
     support_element.innerHTML = `
-    <img class="support_logo_image" src="${site_url}/PublishingImages/support_logo.png" onclick="window.open('http://flow.app.airnet/solutions/support/SitePages/Home.aspx');"></img>
-    <p class="support_text" onclick="location.href='mailto:s9041680@iaf.idf.il&subject=פנייה למפתח בנושא מחולל הכישופים'"><i class="far fa-copyright"></i>ענוג ג'אני</p>
+    <img class="support_logo_image" src="${site_url}/PublishingImages/support_logo.png" onclick="window.open('#');"></img>
+    <p class="support_text" onclick="location.href='mailto:anog054@gmail.com&subject=פנייה למפתח בנושא מחולל הכישופים'"><i class="far fa-copyright"></i>ענוג ג'אני</p>
     `;
     body.appendChild(support_element);
 }
@@ -195,6 +195,7 @@ function notify (mode, message, time = 5) {
 // details: the name of the action (e.g: "load","click","remove" etc'...)
 */
 async function log(title, details){
+    return false; //make function unsuable in Ezrachi mode
     let listName = "Logs";
     let logger = document.getElementById("logger");
     if (logger == null) {return;} //page logger still did not load, we cancel the logging process
@@ -520,7 +521,7 @@ create_loader();
 create_nav_bar();
 create_support_image();
 create_notification();
-create_logger();
+//create_logger(); //make functionality unsable in Ezrachi mode
 
 //handling the spinning screen-loader (only when the page is loading)
 window.addEventListener("load", function(){
