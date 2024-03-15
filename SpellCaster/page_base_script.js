@@ -88,7 +88,7 @@ function create_support_image () {
     support_element.setAttribute("id","support_image");
     support_element.innerHTML = `
     <img class="support_logo_image" src="${site_url}/PublishingImages/support_logo.png" onclick="window.open('#');"></img>
-    <p class="support_text" onclick="location.href='mailto:anog054@gmail.com&subject=פנייה למפתח בנושא מחולל הכישופים'"><i class="far fa-copyright"></i>ענוג ג'אני</p>
+    <p class="support_text" onclick="location.href='mailto:anog054@gmail.com'"><i class="far fa-copyright"></i>ענוג ג'אני</p>
     `;
     body.appendChild(support_element);
 }
