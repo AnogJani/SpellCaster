@@ -139,3 +139,13 @@
     left: 0%;
     color: black;
 }
+
+@media only screen and (max-width: 768px) {
+    .shopping_container {
+        width: 70%;
+    }
+
+    .item {
+        width: 46.9%;
+    }
+}
