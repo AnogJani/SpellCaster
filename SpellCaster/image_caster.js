@@ -309,7 +309,6 @@ function load_icon_links_from_directory () {
     'file-excel.svg',
     'file-image.svg',
     'file-lines.svg',
-    'filenames.txt',
     'file-pdf.svg',
     'file-powerpoint.svg',
     'file-video.svg',
