@@ -72,7 +72,7 @@ function GiveUserOutput () {
     for (let i = 0 ; i < cards.length ; i++) {
         final_code_cards += `
         <div class = "card">
-            <img src="${cards[i][2]}" onerror="this.onerror=null;this.src='http://developer.app.airnet/Madmat71509/AnogJani/PublishingImages/error.png'">
+            <img src="${cards[i][2]}" onerror="this.onerror=null;this.src='${site_url}/PublishingImages/error.png'">
             <div class="card-content">
               <div class="blur"></div>
               <h2>${cards[i][1]}</h2>

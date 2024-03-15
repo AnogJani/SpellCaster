@@ -90,7 +90,7 @@ function GiveUserOutput () {
         if (Filter_White_Text(slides[i][1]) == "") {link = `<a class="slide_link disabled_slide_link"></a>`;}
         final_code_slides += `
         <div class="slide${first_slide}">
-        <img class="slide_image" src="${slides[i][0]}" onerror="this.onerror=null;this.src='http://developer.app.airnet/Madmat71509/AnogJani/PublishingImages/error.png'">
+        <img class="slide_image" src="${slides[i][0]}" onerror="this.onerror=null;this.src='${site_url}/PublishingImages/error.png'">
         ${link}
         </div>` + "\n";
     }
@@ -251,7 +251,7 @@ fetch("gallery_functionality_code.js").then(data => {
         cursor: pointer;
         opacity: 0.4;
         box-shadow: 0 0 7px 2px var(--main-color);
-        background-image: url("http://developer.app.airnet/Madmat71509/AnogJani/PublishingImages/slideshow_link_image.png");
+        background-image: url("${site_url}/PublishingImages/slideshow_link_image.png");
         background-size: contain;
         transition: 0.15s ease;
     }

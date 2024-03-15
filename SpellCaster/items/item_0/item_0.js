@@ -91,7 +91,7 @@ function GiveUserOutput () {
     //generating images (code)
     for (let i = 0 ; i < images.length ; i++) {
         final_code_images += `	<button class="nami_footer_images_container" onclick="window.open(\'`+images[i][0]+`\',\'_self\');" type="button">
-        <img class="nami_footer_images_image" title="`+images[i][1]+`" src="`+images[i][2]+`" onerror="this.onerror=null;this.src='http://developer.app.airnet/Madmat71509/AnogJani/PublishingImages/error.png'"></img>
+        <img class="nami_footer_images_image" title="`+images[i][1]+`" src="`+images[i][2]+`" onerror="this.onerror=null;this.src='${site_url}/PublishingImages/error.png'"></img>
         <p class="nami_footer_images_text">`+images[i][1]+`</p>
         </button>` + "\n";
     }

@@ -65,7 +65,7 @@ function GiveUserOutput () {
     //generating images (code)
     for (let i = 0 ; i < images.length ; i++) {
         final_code_images += `<a class="a-element" href="${images[i][0]}" style="transition: all 100ms ease-in-out ${i*50}ms,transform 100ms ease-in-out;">
-        <img src="${images[i][2]}" onerror="this.onerror=null;this.src='http://developer.app.airnet/Madmat71509/AnogJani/PublishingImages/error.png'">
+        <img src="${images[i][2]}" onerror="this.onerror=null;this.src='${site_url}/PublishingImages/error.png'">
         <p>${images[i][1]}</p>
         </a>` + "\n";
     }
