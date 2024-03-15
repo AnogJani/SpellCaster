@@ -27,7 +27,7 @@ let icon_library = document.getElementById("icon_library");
 
 let icon_links = [];
 let icon_library_page_number = 0;
-const icon_library_page_size = 100;
+const icon_library_page_size = 50;
 
 
 /*
