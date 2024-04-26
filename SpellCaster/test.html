@@ -1,0 +1,43 @@
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="../PublishingImages/spell_caster_logo.ico">
+    <script src="https://kit.fontawesome.com/f2b62ec8bb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/page_base.css">
+    <script src="open_in_chrome.js" defer></script>
+    <script src="page_base_script.js" defer></script>
+    <title>TESTS</title>
+</head>
+
+<body>
+    <!--Navigation Bar-->
+    <div class="nav_bar_padder"></div>
+    <nav class="nav_bar" id="nav_bar"></nav>
+    <!--End Of Navigation Bar-->
+
+    <div id="spell_book_conainer">
+        <div id="icon-container"></div>
+    </div>
+
+    <script>
+        function fetchIcon(iconName) {
+            // Construct the URL for fetching the icon
+            const apiUrl = `https://api.fontawesome.com/icons/${iconName}?style=solid`;
+
+            // Fetch the icon using fetch API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Extract the SVG content from the response
+                    const svgContent = data.icon.svg;
+
+                    // Display the SVG content on the webpage
+                    document.getElementById('icon-container').innerHTML = svgContent;
+                })
+                .catch(error => {
+                    console.error('Error fetching icon:', error);
+                });
+        }
+
+        fetchIcon('cat');
+    </script>
+</body>
